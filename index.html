@@ -3,225 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЗА ВСЕКИ ПО НЕЩО | Пълното изцеление и просветление</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <title>За всеки по нещо — Електронна книга за вътрешен баланс и хармония</title>
+    <!-- Премиум шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4A148C; /* Тъмно виолетово */
-            --secondary-color: #D4AF37; /* Златно */
-            --bg-color: #FAFAFA;
-            --text-color: #333333;
-            --light-text: #FFFFFF;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --bg-gradient: linear-gradient(135deg, #0b1a13 0%, #132a21 100%);
+            --card-bg: rgba(19, 42, 33, 0.9);
+            --card-border: rgba(212, 175, 55, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #c2d1c9;
+            --accent-gold: #d4af37;
+            --accent-green: #10b981;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(74,20,140,0.95) 0%, rgba(25,10,50,0.95) 100%), url('https://source.unsplash.com/1600x900/?nature,sunset,mountains') center/cover;
-            color: var(--light-text);
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h1 {
-            color: var(--secondary-color);
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-weight: 300;
-        }
-
-        /* Buttons */
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: #000;
-            padding: 15px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-            margin: 10px;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-            background-color: #E5C158;
-        }
-
-        .stripe-btn { background-color: #635BFF; color: white; box-shadow: 0 4px 15px rgba(99, 91, 255, 0.4); }
-        .stripe-btn:hover { background-color: #5851E5; color: white; }
-        
-        .paypal-btn { background-color: #0070BA; color: white; box-shadow: 0 4px 15px rgba(0, 112, 186, 0.4); }
-        .paypal-btn:hover { background-color: #005EA6; color: white; }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Two Column Layout */
-        .split-section {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
-        .split-content { flex: 1; min-width: 300px; }
-        
-        .book-cover {
+        .wrapper {
+            width: 100%;
+            max-width: 800px;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Хедър секция */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto 25px auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Секция с история и корица */
+        .story-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            padding: 40px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .story-text {
             flex: 1;
-            min-width: 300px;
+        }
+
+        .story-text h2 {
+            font-size: 24px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .story-text p {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .book-cover {
+            flex: 0 0 240px;
             text-align: center;
         }
 
         .book-cover img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border: 2px solid var(--secondary-color);
+            width: 100%;
+            max-width: 220px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 2px solid var(--card-border);
         }
 
-        /* Features */
-        .features {
-            background-color: #fff;
-            padding: 60px 20px;
+        /* Мрежа с предимства */
+        .features-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .features-section h2 {
+            text-align: center;
+            font-size: 26px;
+            color: var(--text-main);
+            margin-bottom: 30px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .feature-card {
-            padding: 30px;
-            background: var(--bg-color);
-            border-top: 4px solid var(--secondary-color);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* Pricing Section */
-        .pricing {
+        .feature-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 22px 15px;
+            border-radius: 16px;
             text-align: center;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 80px 20px;
+            transition: transform 0.3s ease;
         }
 
-        .pricing h2 { color: var(--secondary-color); margin-bottom: 20px; }
-        .price-tag { font-size: 3rem; font-weight: bold; color: var(--secondary-color); margin: 20px 0; }
-        
-        /* Footer */
+        .feature-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .feature-box h3 {
+            font-size: 15px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Чеккаут / Плащане секция */
+        .checkout-section {
+            background: linear-gradient(135deg, #132a21 0%, #1a3a2d 100%);
+            border-radius: 24px;
+            border: 2px solid var(--accent-gold);
+            padding: 45px 30px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .checkout-section h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .checkout-section p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .price-tag {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .btn-stripe {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .btn-stripe:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .secure-note {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Фуутър */
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #1a1a1a;
-            color: #ccc;
-            font-size: 0.9rem;
+            font-size: 12px;
+            color: #8c9e94;
+            line-height: 1.6;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
-        footer a { color: var(--secondary-color); }
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        /* Адаптивност за телефони */
+        @media (max-width: 768px) {
+            .story-section { flex-direction: column; text-align: center; padding: 25px; }
+            .features-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 28px; }
+            .story-section { padding: 25px 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>ЗА ВСЕКИ ПО НЕЩО</h1>
-        <p>Пълното ръководство за изцеление, благополучие и духовно пробуждане. Мъдрост, събрана в една книга.</p>
-        <a href="#checkout" class="cta-btn">Вземи своята книга сега</a>
-    </header>
+    <div class="wrapper">
+        
+        <!-- ХЕДЪР -->
+        <header>
+            <div class="badge">✨ Премиум електронен наръчник</div>
+            <h1>ЗА ВСЕКИ ПО НЕЩО</h1>
+            <p>Пълният дигитален наръчник за вътрешен баланс, хармония и природосъобразен начин на живот. Мъдрост и традиции, събрани в една електронна книга.</p>
+            <a href="#checkout" class="btn-stripe" style="padding: 14px 25px; font-size: 15px;">Вземи своята книга сега</a>
+        </header>
 
-    <section class="container split-section">
-        <div class="split-content">
-            <h2>Денят, в който светлината се завърна</h2>
-            <p><br>Има моменти в живота, когато мракът изглежда абсолютен. Точно тогава се появи Ели. Тя не беше просто лечител; тя беше фар. Тази книга е живата памет на едно изцеление.</p>
-            <p><br>Тук ще откриете забравените тайни на българските билки, мощни молитви за защита и духовни закони, които ще преобразят реалността ви. От "Желязната ябълка" до "Виолетовия огън" – това е вашето ръководство за здраве, хармония и просперитет.</p>
-        </div>
-        <div class="book-cover">
-            <img src="https://github.com/officelltd/Nature-heal/blob/main/%D0%97%D0%B0%20%D0%92%D1%81%D0%B5%D0%BA%D0%B8%20%D0%BF%D0%BE%20%D0%9D%D0%B5%D1%89%D0%BE%20front.png?raw=true" alt="Корица на книгата За всеки по нещо">
-        </div>
-    </section>
+        <!-- ИСТОРИЯ И КОРИЦА -->
+        <section class="story-section">
+            <div class="story-text">
+                <h2>Денят, в който светлината се завърна</h2>
+                <p>Има моменти в живота, когато всичко изглежда сиво и забързано. Точно тогава се появи Ели. Тя не беше просто учител по живот; тя беше фар на мъдростта. Тази електронна книга е живата памет на нейния опит и преоткриване на природата.</p>
+                <p>Тук ще откриете забравените тайни на българските традиции, автентични рецепти за домашен билков чай, мощни положителни утвърждения и универсални закони за хармония и вътрешно спокойствие.</p>
+            </div>
+            <div class="book-cover">
+                <!-- Запазен е твоят оригинален линк към корицата -->
+                <img src="https://github.com/officelltd/Nature-heal/blob/main/%D0%97%D0%B0%20%D0%92%D1%81%D0%B5%D0%BA%D0%B8%20%D0%BF%D0%BE%20%D0%9D%D0%B5%D1%89%D0%BE%20front.png?raw=true" alt="Корица на книгата За всеки по нещо">
+            </div>
+        </section>
 
-    <section class="features">
-        <div class="container">
-            <h2 style="text-align: center;">Какво ще откриете в тази книга?</h2>
+        <!-- ПРЕДИМСТВА (3 КУТИЙКИ) -->
+        <section class="features-section">
+            <h2>Какво ще откриете в тази електронна книга?</h2>
             <div class="features-grid">
-                <div class="feature-card">
-                    <h3>🌿 Великата Билкова Аптека</h3>
-                    <p>Автентични рецепти за изцеление на тялото – от пречистване на паразити и лимфа до рецепти за дълголетие, стави и имунитет.</p>
+                <div class="feature-box">
+                    <h3>🌿 Традиционни рецепти</h3>
+                    <p>Автентични български рецепти за приготвяне на ароматен чай, домашен уют и природосъобразен начин на живот.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🔥 Енергийна Защита</h3>
-                    <p>Пълно ръководство за работа с Виолетовия пламък, изчистване на кармични договори и прекъсване на енергийни нишки.</p>
+                <div class="feature-box">
+                    <h3>🔥 Вътрешна хармония</h3>
+                    <p>Практики за работа с положителната енергия, изчистване на напрежението и постигане на дълбок душевен баланс.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>✨ Духовна Мъдрост</h3>
-                    <p>Законите на Вадим Зеланд, Уейн Дайър и Петър Дънов. Десетте ключа към щастието и практическото им приложение чрез 21-дневна програма.</p>
+                <div class="feature-box">
+                    <h3>✨ Духовна мъдрост</h3>
+                    <p>Законите на хармонията и баланса. Десетте ключа към вътрешното спокойствие и практическото им приложение.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="checkout" class="pricing">
-        <div class="container">
-            <h2>Инвестирайте в своето здраве и дух</h2>
-            <p>Изтеглете пълната дигитална книга (PDF формат), съдържаща всички 11 тома, рецепти, молитви и азбучен указател на симптомите.</p>
-            <div class="price-tag"> 11 € .</div> <p style="margin-bottom: 30px;"><em>*След успешно плащане ще получите линк за незабавно сваляне на PDF файла.</em></p>
+        <!-- ЧЕККАУТ СЕКЦИЯ С ТВОЯ STRIPE ЛИНК -->
+        <section class="checkout-section" id="checkout">
+            <h2>Започни своето пътуване към хармонията</h2>
+            <p>Изтегли пълната електронна книга (PDF формат), съдържаща всички 11 тома, рецепти, духовни насоки и удобен указател за цялостно благополучие.</p>
+            <div class="price-tag">11 €</div>
             
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="https://buy.stripe.com/4gMcN51Jn2w3aVt5uu9EI0H" class="cta-btn stripe-btn">💳 Плати с Карта (Stripe)</a>
-                
-            </div>
-        </div>
-    </section>
+            <!-- Твоят реален работещ Stripe линк -->
+            <a href="https://buy.stripe.com/4gMcN51Jn2w3aVt5uu9EI0H" class="btn-stripe">💳 Прочети електронната книга (Плати с Карта)</a>
+            
+            <div class="secure-note"><br><em>*След успешно плащане ще получите линк за незабавно изтегляне на PDF файла.</em></div>
+        </section>
 
-    <footer>
-        <p>&copy; 2026 За всеки по нещо. Всички права запазени.</p>
-        <p><br>Този продукт е дигитален (PDF). За въпроси и контакт с автора: <a href="mailto:office.lltd@email.com">office.lltd@email.com</a></p>
-        <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Отказ от отговорност: Съветите в тази книга не заместват професионална медицинска консултация.</p>
-    </footer>
+        <!-- ФУУТЪР С ИЗИСКВАНИЯТА НА TIKTOK -->
+        <footer>
+            <p>© 2026 За всеки по нещо. Всички права запазени.</p>
+            <p>За въпроси и контакт с автора: <a href="mailto:office.lltd@email.com">office.lltd@email.com</a></p>
+            <p><strong>Отказ от отговорност:</strong> Тази електронна книга е предназначена единствено за образователни и информационни цели и не е заместител на професионална медицинска консултация.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>

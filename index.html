@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>За всеки по нещо — Електронна книга за вътрешен баланс и хармония</title>
-    <!-- Премиум шрифт -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -29,6 +28,32 @@
             min-height: 100vh;
         }
 
+        /* Горно меню (Навигация) */
+        nav {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(19, 42, 33, 0.95);
+            border-bottom: 1px solid var(--card-border);
+            text-align: center;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
         .wrapper {
             width: 100%;
             max-width: 800px;
@@ -36,7 +61,6 @@
             box-sizing: border-box;
         }
 
-        /* Хедър секция */
         header {
             text-align: center;
             padding: 40px 20px;
@@ -78,7 +102,6 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* Секция с история и корица */
         .story-section {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
@@ -123,7 +146,6 @@
             border: 2px solid var(--card-border);
         }
 
-        /* Мрежа с предимства */
         .features-section {
             background: var(--card-bg);
             backdrop-filter: blur(16px);
@@ -174,7 +196,6 @@
             margin: 0;
         }
 
-        /* Чеккаут / Плащане секция */
         .checkout-section {
             background: linear-gradient(135deg, #132a21 0%, #1a3a2d 100%);
             border-radius: 24px;
@@ -235,22 +256,38 @@
             color: var(--text-muted);
         }
 
-        /* Фуутър */
+        /* Обновен Фуутър */
         footer {
             text-align: center;
             font-size: 12px;
             color: #8c9e94;
             line-height: 1.6;
-            padding: 20px;
+            padding: 30px 20px;
             border-top: 1px solid rgba(255,255,255,0.08);
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        footer a {
+        .footer-info {
+            margin-bottom: 15px;
+            color: #c2d1c9;
+            font-size: 13px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
             color: var(--accent-gold);
             text-decoration: none;
+            margin: 0 10px;
         }
 
-        /* Адаптивност за телефони */
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .story-section { flex-direction: column; text-align: center; padding: 25px; }
             .features-grid { grid-template-columns: 1fr; }
@@ -261,9 +298,16 @@
 </head>
 <body>
 
+    <!-- Навигационно меню -->
+    <nav>
+        <a href="index.html" class="active">Начало</a>
+        <a href="terms.html">Условия</a>
+        <a href="privacy.html">Поверителност</a>
+        <a href="refunds.html">Връщане</a>
+    </nav>
+
     <div class="wrapper">
         
-        <!-- ХЕДЪР -->
         <header>
             <div class="badge">✨ Премиум електронен наръчник</div>
             <h1>ЗА ВСЕКИ ПО НЕЩО</h1>
@@ -271,7 +315,6 @@
             <a href="#checkout" class="btn-stripe" style="padding: 14px 25px; font-size: 15px;">Вземи своята книга сега</a>
         </header>
 
-        <!-- ИСТОРИЯ И КОРИЦА -->
         <section class="story-section">
             <div class="story-text">
                 <h2>Денят, в който светлината се завърна</h2>
@@ -279,12 +322,10 @@
                 <p>Тук ще откриете забравените тайни на българските традиции, автентични рецепти за домашен билков чай, мощни положителни утвърждения и универсални закони за хармония и вътрешно спокойствие.</p>
             </div>
             <div class="book-cover">
-                <!-- Запазен е твоят оригинален линк към корицата -->
                 <img src="https://github.com/officelltd/Nature-heal/blob/main/%D0%97%D0%B0%20%D0%92%D1%81%D0%B5%D0%BA%D0%B8%20%D0%BF%D0%BE%20%D0%9D%D0%B5%D1%89%D0%BE%20front.png?raw=true" alt="Корица на книгата За всеки по нещо">
             </div>
         </section>
 
-        <!-- ПРЕДИМСТВА (3 КУТИЙКИ) -->
         <section class="features-section">
             <h2>Какво ще откриете в тази електронна книга?</h2>
             <div class="features-grid">
@@ -303,26 +344,35 @@
             </div>
         </section>
 
-        <!-- ЧЕККАУТ СЕКЦИЯ С ТВОЯ STRIPE ЛИНК -->
         <section class="checkout-section" id="checkout">
             <h2>Започни своето пътуване към хармонията</h2>
             <p>Изтегли пълната електронна книга (PDF формат), съдържаща всички 11 тома, рецепти, духовни насоки и удобен указател за цялостно благополучие.</p>
             <div class="price-tag">11 €</div>
             
-            <!-- Твоят реален работещ Stripe линк -->
             <a href="https://buy.stripe.com/4gMcN51Jn2w3aVt5uu9EI0H" class="btn-stripe">💳 Прочети електронната книга (Плати с Карта)</a>
             
             <div class="secure-note"><br><em>*След успешно плащане ще получите линк за незабавно изтегляне на PDF файла.</em></div>
         </section>
 
-        <!-- ФУУТЪР С ИЗИСКВАНИЯТА НА TIKTOK -->
-        <footer>
-            <p>© 2026 За всеки по нещо. Всички права запазени.</p>
-            <p>За въпроси и контакт с автора: <a href="mailto:office.lltd@email.com">office.lltd@email.com</a></p>
-            <p><strong>Отказ от отговорност:</strong> Тази електронна книга е предназначена единствено за образователни и информационни цели и не е заместител на професионална медицинска консултация.</p>
-        </footer>
-
     </div>
+
+    <!-- Задължителен бизнес фуутър -->
+    <footer>
+        <div class="footer-info">
+            <strong>Издател:</strong> Office LLTD<br>
+            <strong>Контакт:</strong> office.lltd@email.com<br>
+            <strong>Адрес:</strong> гр. София, България
+        </div>
+        
+        <div class="footer-links">
+            <a href="privacy.html">Политика за поверителност</a> |
+            <a href="terms.html">Условия за ползване</a> |
+            <a href="refunds.html">Политика за връщане</a>
+        </div>
+        
+        <p>© 2026 За всеки по нещо. Всички права запазени.</p>
+        <p><strong>Отказ от отговорност:</strong> Тази електронна книга е предназначена единствено за образователни и информационни цели и не е заместител на професионална медицинска консултация.</p>
+    </footer>
 
 </body>
 </html>
